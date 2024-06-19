@@ -1,5 +1,10 @@
 import express from 'express';
+import { env } from './utils/env.js';
 export const setupServer = () => {
-
-    const
+  const app = express();
+  const PORT = Number(env('PORT', '3000'));
+  app.listen(PORT, () => {
+    console.log('Success port!');
+  });
 };
+setupServer();
